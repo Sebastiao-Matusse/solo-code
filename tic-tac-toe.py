@@ -36,7 +36,7 @@ def draw_grid(board):
 def change_numbers(numbers, player):
     prompt = int(input(f"{player}'s turn to choose a square (1-9): "))
     numbers[prompt - 1] = player
-
+            
 def has_winner(board):
     """Checks if the square have the same value or not.
     Return: """
@@ -67,6 +67,10 @@ def next_player(current):
 if __name__ == "__main__":
     main()
 
+
+
+
+""" In the code below! I was trying to construct the software before seeing the sample solution"""
 # def draw_grid(number_list):
 #     print()    
 #     for i in number_list:
