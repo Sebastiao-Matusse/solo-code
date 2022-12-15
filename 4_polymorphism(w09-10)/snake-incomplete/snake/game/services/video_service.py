@@ -1,7 +1,5 @@
 import pyray
 import constants
-
-
 class VideoService:
     """Outputs the game state. The responsibility of the class of objects is to draw the game state 
     on the screen. 
@@ -14,6 +12,7 @@ class VideoService:
             debug (bool): whether or not to draw in debug mode.
         """
         self._debug = debug
+        self._time = pyray.get_time()
 
     def close_window(self):
         """Closes the window and releases all computing resources."""
@@ -78,7 +77,10 @@ class VideoService:
         """
         pyray.init_window(constants.MAX_X, constants.MAX_Y, constants.CAPTION)
         pyray.set_target_fps(constants.FRAME_RATE)
-
+        # button_line = pyray.draw_line_ex((0, constants.MAX_Y),(constants.MAX_X, constants.MAX_Y), 0.5, constants.RED)
+        # left_line = pyray.draw_line_ex((0, 0),(0, constants.MAX_Y), 0.5, constants.RED)
+        # right_line = pyray.draw_line_ex((constants.MAX_X, 0),(constants.MAX_X, constants.MAX_Y), 0.5, constants.RED)
+        
     def _draw_grid(self):
         """Draws a grid on the screen."""
         for y in range(0, constants.MAX_Y, constants.CELL_SIZE):
